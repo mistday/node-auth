@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h1= title
+	- if (login) 
+		p Hello <strong>#{login}</strong>
+			- if (pass)
+				|, your password is <strong>#{pass}</strong>
+
+	p Welcome to #{page}
+
+	br
+	- if (login)
+		a(href='/logout') выйти
+	-else
+		a(href='/auth') authorization
